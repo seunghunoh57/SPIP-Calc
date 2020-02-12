@@ -16,7 +16,8 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      polyCoords: []
+      polyCoords: [],
+      searchValue: ""
     }
   }
 
@@ -24,6 +25,7 @@ export class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          <input type="text" id="searchBar" value={this.state.searchValue} />
           <Map
             className="map"
             centerAroundCurrentLocation
