@@ -13,7 +13,21 @@
   color: white;
 }
 
-#searchBar {
-  position: absolute,
+#searchDiv {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 90vh;
+}
 
+#searchDiv p {
+  float: left;
+}
+
+#searchBar {
+  width: 30vw;
+  font-size: larger;
+  float: right;
+  align-self: center;
+  margin-left: 20px
 }
