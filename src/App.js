@@ -22,11 +22,9 @@ export class App extends React.Component {
         lat: null,
         lng: null
       },
-      polyCoords: [],
+      polyCoords: [{lat: 42.3601, lng: -71.0589}],
       address: "",
     }
-
-    this.handleSelect = this.handleSelect.bind(this);
   }
 
   handleChange = address => {
@@ -42,6 +40,22 @@ export class App extends React.Component {
       })
       .catch(error => console.error('Error while retrieving coordinates', error));
   };
+
+  placeMarker = coord => {
+    return <Marker
+      draggable
+      position={coord}
+    />
+  }
+
+  placePolyMarkers = () => {
+    return (
+      this.state.polyCoords.map(coord => {
+        console.log(coord);
+        return this.placeMarker(coord)
+      })
+    );
+  }
 
   render() {
     return (
@@ -63,11 +77,7 @@ export class App extends React.Component {
             zoom={14}
             style={style}
           >
-            <Marker
-              draggable
-              name={'tester'} 
-              position={{lat: 42.3601, lng: -71.0589}}
-            />
+            {this.placePolyMarkers()}
             <Polygon 
               paths={this.state.polyCoords}
               strokeColor="#FF0000"
