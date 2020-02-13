@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import {Map, Polygon, GoogleApiWrapper} from 'google-maps-react';
-import PlacesAutocomplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
+import {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import {api_key} from './config.js';
+import { AppAutocomplete } from './AppAutocomplete';
 
 const style = {
   width: '80vw',
@@ -33,7 +34,7 @@ export class App extends React.Component {
   }
 
   handleSelect = address => {
-    const results = geocodeByAddress(address)
+    geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => {
         console.log('Success', latLng);
@@ -47,34 +48,11 @@ export class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <div id="searchDiv">
-            <PlacesAutocomplete
-              value={this.state.address}
-              onChange={this.handleChange}
-              onSelect={this.handleSelect}
-            >
-              {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
-                <div>
-                  <input
-                    {...getInputProps({ placeholder: "Enter an address"})}
-                  />
-                  <div>
-                    {loading ? <div>Loading...</div> : null}
-                    
-                    {suggestions.map(suggestion => {
-                      const style = {
-                        backgroundColor: suggestion.active ? "#41b6e6" : "#000"
-                      };
-
-                      return (
-                        <div {...getSuggestionItemProps(suggestion, {style})}>
-                          {suggestion.description}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
-            </PlacesAutocomplete>
+            <AppAutocomplete
+              address={this.state.address}
+              handleChange={this.handleChange}
+              handleSelect={this.handleSelect}
+            />
           </div>
           <Map
             className="map"
