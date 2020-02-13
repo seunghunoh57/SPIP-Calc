@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import {Map, Polygon, GoogleApiWrapper} from 'google-maps-react';
-import {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
-import {api_key} from './config.js';
+import { Map, Marker, Polygon, GoogleApiWrapper } from 'google-maps-react';
+import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import { api_key } from './config.js';
 import { AppAutocomplete } from './AppAutocomplete';
 
 const style = {
@@ -63,6 +63,11 @@ export class App extends React.Component {
             zoom={14}
             style={style}
           >
+            <Marker
+              draggable
+              name={'tester'} 
+              position={{lat: 42.3601, lng: -71.0589}}
+            />
             <Polygon 
               paths={this.state.polyCoords}
               strokeColor="#FF0000"
