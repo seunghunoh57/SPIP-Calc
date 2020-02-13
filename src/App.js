@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import dot from "./markerdot.png";
 import { Map, Marker, Polygon, GoogleApiWrapper } from "google-maps-react";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import { api_key } from "./config.js";
@@ -22,11 +23,7 @@ export class App extends React.Component {
         lat: null,
         lng: null
       },
-      polyCoords: [
-        { lat: 42.3601, lng: -71.0589 },
-        { lat: 40.4173, lng: -82.9071 },
-        { lat: 36.7783, lng: -119.4179 }
-      ],
+      polyCoords: [],
       address: ""
     };
   }
@@ -48,7 +45,7 @@ export class App extends React.Component {
   };
 
   placeMarker = coord => {
-    return <Marker draggable position={coord} />;
+    return <Marker draggable icon={dot} position={coord} />;
   };
 
   placeNewMarker = (mapProps, map, clickEvent) => {
