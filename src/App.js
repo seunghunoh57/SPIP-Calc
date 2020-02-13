@@ -17,21 +17,29 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      currentCoord: {
+        lat: null,
+        lng: null
+      },
       polyCoords: [],
       address: "",
     }
+
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   handleChange = address => {
-    console.log("test");
     this.setState({address});
   }
 
   handleSelect = address => {
-    geocodeByAddress(address)
+    const results = geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => console.log('Success', latLng))
-      .catch(error => console.error('Error', error));
+      .then(latLng => {
+        console.log('Success', latLng);
+        this.setState({currentCoord: latLng});
+      })
+      .catch(error => console.error('Error while retrieving coordinates', error));
   };
 
   render() {
@@ -71,6 +79,7 @@ export class App extends React.Component {
           <Map
             className="map"
             centerAroundCurrentLocation
+            center={this.state.currentCoord}
             google={this.props.google}
             onReady={this.fetchPlaces}
             zoom={14}
