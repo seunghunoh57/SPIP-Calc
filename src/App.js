@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Map, Polygon, GoogleApiWrapper} from 'google-maps-react';
+import PlacesAutocomplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete';
 import {api_key} from './config.js';
 
 const style = {
@@ -9,7 +10,7 @@ const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
-  transform: 'translate(-50%, -50%)'
+  transform: 'translate(-50%, -50%)',
 }
 
 export class App extends React.Component {
@@ -17,22 +18,61 @@ export class App extends React.Component {
     super(props);
     this.state = {
       polyCoords: [],
-      searchValue: "taewtaweawet"
+      address: "",
     }
   }
+
+  handleChange = address => {
+    console.log("test");
+    this.setState({address});
+  }
+
+  handleSelect = address => {
+    geocodeByAddress(address)
+      .then(results => getLatLng(results[0]))
+      .then(latLng => console.log('Success', latLng))
+      .catch(error => console.error('Error', error));
+  };
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <div id="searchDiv">
-            <p>Enter an Address:</p>
-            <input type="text" id="searchBar" value={this.state.searchValue} />
+            <PlacesAutocomplete
+              value={this.state.address}
+              onChange={this.handleChange}
+              onSelect={this.handleSelect}
+            >
+              {({getInputProps, suggestions, getSuggestionItemProps, loading}) => (
+                <div>
+                  <input
+                    {...getInputProps({ placeholder: "Enter an address"})}
+                  />
+                  <div>
+                    {loading ? <div>Loading...</div> : null}
+                    
+                    {suggestions.map(suggestion => {
+                      const style = {
+                        backgroundColor: suggestion.active ? "#41b6e6" : "#000"
+                      };
+
+                      return (
+                        <div {...getSuggestionItemProps(suggestion, {style})}>
+                          {suggestion.description}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </PlacesAutocomplete>
           </div>
           <Map
             className="map"
             centerAroundCurrentLocation
             google={this.props.google}
+            onReady={this.fetchPlaces}
             zoom={14}
             style={style}
           >
