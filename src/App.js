@@ -52,9 +52,19 @@ export class App extends React.Component {
   };
 
   // handle the change in marker's coordinates after it is dragged
-  changeMarkerCoord = e => {
-    console.log(e);
-    console.log(this.props);
+  changeMarkerCoord = (marker, newCoord) => {
+    // replace marker.position from this.state.polyCoords with newCoord.latLng
+    // e is
+
+    var tempPolyCoords = [...this.state.polyCoords];
+    var idx = tempPolyCoords.indexOf(marker.position);
+
+    console.log(idx);
+    if (idx !== -1) {
+      // change polyCoords state right here
+      tempPolyCoords.splice(idx, 1, newCoord.latLng);
+      this.setState({ polyCoords: tempPolyCoords });
+    }
   };
 
   // Place marker with given parameter coordinates onto the Google Maps
@@ -64,7 +74,7 @@ export class App extends React.Component {
         draggable
         icon={dot}
         position={coord}
-        onDragend={e => this.changeMarkerCoord(e)}
+        onDragend={(e, map, coord) => this.changeMarkerCoord(e, coord)}
       />
     );
   };
@@ -76,7 +86,7 @@ export class App extends React.Component {
       clickEvent.latLng.lat(),
       clickEvent.latLng.lng()
     );
-    console.log("poly", this.state);
+
     var coord = clickEvent.latLng;
     this.setState(prevState => ({
       polyCoords: prevState.polyCoords.concat(coord)
