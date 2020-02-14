@@ -39,8 +39,7 @@ export class App extends React.Component {
   }
 
   // On info button click, loads modal
-  handleModalClose = () => {
-    console.log("test");
+  handleModalClose = event => {
     this.setState(prevState => ({ loadModal: !prevState.loadModal }));
   };
 
@@ -157,7 +156,8 @@ export class App extends React.Component {
             </p>
             <p>
               If you wish to clear the map of polygon areas, press the Clear Map
-              Markers located at the top right side of the embedded Google Maps.
+              Markers located above the top right side of the embedded Google
+              Maps.
             </p>
             <p id="thankYou">Thank you!</p>
             <div id="thankYouMask" />
