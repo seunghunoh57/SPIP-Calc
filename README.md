@@ -4,7 +4,7 @@ This project was created as part of the technical assignment for an interview pr
 
 -------------------
 
-## How to view the app:
+## How to view this app:
 
 ### Online:
 You can view the website via: https://seunghunoh57.github.io/google-maps-assignment/
