@@ -101,7 +101,11 @@ export class App extends React.Component {
   };
 
   // Calculate the nominal power of the drawn polygon
-  // Nominal power is calculated
+  // Nominal power is calculated as area * light intensity
+  // The assumptions made are that we are following Standard Test Conditions (STC), such as IEC 61215, IEC 61646, and UL 1703
+  // Assumptions made as part of STC are that light intensity is 1000W/m^2, with a light spectrum similar to
+  // sunlight hitting the earth's surface at latitude 35N, and the temperature of solar cells being 25 degrees
+  // Celcius. Thus, we are also ignoring the differences in lumens created by differences in elevation.
   calcNominalPower = () => {
     var polyArea = this.props.google.maps.geometry.spherical.computeArea(
       this.state.polyCoords
