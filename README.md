@@ -10,7 +10,7 @@ This project was created as part of a technical aspect for an interview process.
 You can view the website via: https://seunghunoh57.github.io/google-maps-assignment/
 
 ### Offline:
-Clone the repository and navigate to the local repository folder. In your terminal, type:
+Clone the repository to the desired folder using your terminal. Then, navigate to the local repository folder and type:
 
 ```npm start```
 
