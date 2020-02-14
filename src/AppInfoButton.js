@@ -23,7 +23,7 @@ export const AppInfoButton = props => {
         loadModal={props.loadModal}
         handleModalClose={props.handleModalClose}
       >
-        <h4>About this app</h4>
+        <h4>About the app</h4>
         <p>
           Hi everyone! My name is Seunghun Oh and this app is called Solar Cell
           Installation Calculator.

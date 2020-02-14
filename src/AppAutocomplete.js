@@ -27,8 +27,8 @@ export function AppAutocomplete(props) {
             <div className="searchResultsContainer">
               {suggestions.map(suggestion => {
                 const style = {
-                  backgroundColor: suggestion.active ? "#ff6961" : "#e9e9e4",
-                  "font-size": "22px"
+                  backgroundColor: suggestion.active ? "#fff5d0" : "#e9e9e4",
+                  "font-size": "18px"
                 };
 
                 return (
