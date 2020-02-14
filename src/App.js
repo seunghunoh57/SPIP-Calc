@@ -11,8 +11,8 @@ import { api_key } from "./config.js";
 import { AppAutocomplete } from "./AppAutocomplete";
 
 const style = {
-  width: "80vw",
-  height: "80vh",
+  width: "75vw",
+  height: "75vh",
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -118,6 +118,7 @@ export class App extends React.Component {
     return (
       <div className="App">
         <div className="App-body">
+          <h4 id="title">Solar Cell Installation Calculator</h4>
           <div id="searchDiv">
             <AppAutocomplete
               address={this.state.address}

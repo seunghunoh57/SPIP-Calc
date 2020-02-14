@@ -14,21 +14,31 @@ export function AppAutocomplete(props) {
     >
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <div>
-          <input {...getInputProps({ placeholder: "Enter an address" })} />
+          <input
+            id="searchBar"
+            {...getInputProps({ placeholder: "Enter a location" })}
+          />
           <div>
-            {loading ? <div>Loading...</div> : null}
+            {loading ? (
+              <div className="searchResultsContainer">Loading...</div>
+            ) : null}
+            <div className="searchResultsContainer">
+              {suggestions.map(suggestion => {
+                const style = {
+                  backgroundColor: suggestion.active ? "#ff6961" : "#cfcfc4",
+                  "font-size": "22px"
+                };
 
-            {suggestions.map(suggestion => {
-              const style = {
-                backgroundColor: suggestion.active ? "#41b6e6" : "#000"
-              };
-
-              return (
-                <div {...getSuggestionItemProps(suggestion, { style })}>
-                  {suggestion.description}
-                </div>
-              );
-            })}
+                return (
+                  <div
+                    className="searchResult"
+                    {...getSuggestionItemProps(suggestion, { style })}
+                  >
+                    {suggestion.description}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       )}
