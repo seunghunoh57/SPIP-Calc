@@ -12,9 +12,9 @@ You can view the website via: https://seunghunoh57.github.io/google-maps-assignm
 ### Offline:
 Clone the repository and navigate to the local repository folder. In your terminal, type:
 
-`npm start`
+```npm start```
 
-Then, navigate to http://localhost:3000/ to view the application.
+Then, navigate to http://localhost:3000/ to view the application. Note that you must insert your your own Google API key in a file called `config.js` under `./src/`.
 
 --------------------
 
