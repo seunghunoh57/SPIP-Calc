@@ -6,10 +6,13 @@ import React from "react";
 import "./App.css";
 import dot from "./markerdot.png";
 import info from "./info.png";
+import linkedin from "./linkedinlogo.png";
+import github from "./githublogo.png";
 import { Map, Marker, Polygon, GoogleApiWrapper } from "google-maps-react";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import { api_key } from "./config.js";
 import { AppAutocomplete } from "./AppAutocomplete";
+import { AppModal } from "./AppModal.js";
 
 const style = {
   width: "75vw",
@@ -30,12 +33,15 @@ export class App extends React.Component {
         lng: null
       },
       polyCoords: [],
-      address: ""
+      address: "",
+      loadModal: false
     };
   }
 
-  handleHelpModal = () => {
-    console.log("nice");
+  // On info button click, loads modal
+  handleModalClose = () => {
+    console.log("test");
+    this.setState(prevState => ({ loadModal: !prevState.loadModal }));
   };
 
   // Handle change in search bar by changing the appropriate state value
@@ -111,7 +117,7 @@ export class App extends React.Component {
     var polyArea = this.props.google.maps.geometry.spherical.computeArea(
       this.state.polyCoords
     );
-    return ((polyArea * 1000) / 1000000).toFixed(polyArea === 0 ? 0 : 4);
+    return ((polyArea * 1000) / 1000000).toFixed(polyArea === 0 ? 0 : 2);
   };
 
   // Clear all polygon corner markers that have been placed on the map
@@ -129,8 +135,39 @@ export class App extends React.Component {
             width="25"
             height="25"
             src={info}
-            onClick={this.handleHelpModal}
+            onClick={this.handleModalClose}
+            alt=""
           />
+          <AppModal
+            loadModal={this.state.loadModal}
+            handleModalClose={this.handleModalClose}
+          >
+            <h4>About this app</h4>
+            <p>
+              Hi everyone! My name is Seunghun Oh and this app is called Solar
+              Cell Installation Calculator.
+            </p>
+            <p>
+              To use this app, either search a location in the search bar or
+              click on points in the embedded Google Maps. Clicking on multiples
+              points of the map will dynamically shade a polygon area. This area
+              indicates the estimated nominal power of solar installations
+              within the area, which is also dynamically displayed at the bottom
+              of the app.
+            </p>
+            <p>
+              If you wish to clear the map of polygon areas, press the Clear Map
+              Markers located at the top right side of the embedded Google Maps.
+            </p>
+            <p id="thankYou">Thank you!</p>
+            <div id="thankYouMask" />
+            <a href="https://www.linkedin.com/in/seunghunoh/">
+              <img width="40" height="40" src={linkedin} alt="" />
+            </a>
+            <a href="https://github.com/seunghunoh57/">
+              <img width="40" height="40" src={github} alt="" />
+            </a>
+          </AppModal>
           <div id="searchDiv">
             <AppAutocomplete
               address={this.state.address}
