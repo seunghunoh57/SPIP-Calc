@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/google-maps-assignment/static/css/main.c83077a4.chunk.css",
-    "main.js": "/google-maps-assignment/static/js/main.6adcbc6b.chunk.js",
-    "main.js.map": "/google-maps-assignment/static/js/main.6adcbc6b.chunk.js.map",
+    "main.css": "/google-maps-assignment/static/css/main.9b860a35.chunk.css",
+    "main.js": "/google-maps-assignment/static/js/main.d7ac536b.chunk.js",
+    "main.js.map": "/google-maps-assignment/static/js/main.d7ac536b.chunk.js.map",
     "runtime-main.js": "/google-maps-assignment/static/js/runtime-main.51cf90e8.js",
     "runtime-main.js.map": "/google-maps-assignment/static/js/runtime-main.51cf90e8.js.map",
-    "static/js/2.7124a43d.chunk.js": "/google-maps-assignment/static/js/2.7124a43d.chunk.js",
-    "static/js/2.7124a43d.chunk.js.map": "/google-maps-assignment/static/js/2.7124a43d.chunk.js.map",
+    "static/js/2.9695544d.chunk.js": "/google-maps-assignment/static/js/2.9695544d.chunk.js",
+    "static/js/2.9695544d.chunk.js.map": "/google-maps-assignment/static/js/2.9695544d.chunk.js.map",
     "index.html": "/google-maps-assignment/index.html",
-    "precache-manifest.dea7525522301732cc3df3688d14831e.js": "/google-maps-assignment/precache-manifest.dea7525522301732cc3df3688d14831e.js",
+    "precache-manifest.e70dbe7edaa755a9fc1db384b62bfa0a.js": "/google-maps-assignment/precache-manifest.e70dbe7edaa755a9fc1db384b62bfa0a.js",
     "service-worker.js": "/google-maps-assignment/service-worker.js",
-    "static/css/main.c83077a4.chunk.css.map": "/google-maps-assignment/static/css/main.c83077a4.chunk.css.map",
-    "static/js/2.7124a43d.chunk.js.LICENSE.txt": "/google-maps-assignment/static/js/2.7124a43d.chunk.js.LICENSE.txt"
+    "static/css/main.9b860a35.chunk.css.map": "/google-maps-assignment/static/css/main.9b860a35.chunk.css.map",
+    "static/js/2.9695544d.chunk.js.LICENSE.txt": "/google-maps-assignment/static/js/2.9695544d.chunk.js.LICENSE.txt",
+    "static/media/info.png": "/google-maps-assignment/static/media/info.ff63fec6.png"
   },
   "entrypoints": [
     "static/js/runtime-main.51cf90e8.js",
-    "static/js/2.7124a43d.chunk.js",
-    "static/css/main.c83077a4.chunk.css",
-    "static/js/main.6adcbc6b.chunk.js"
+    "static/js/2.9695544d.chunk.js",
+    "static/css/main.9b860a35.chunk.css",
+    "static/js/main.d7ac536b.chunk.js"
   ]
 }
