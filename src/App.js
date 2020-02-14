@@ -54,6 +54,7 @@ export class App extends React.Component {
   // handle the change in marker's coordinates after it is dragged
   changeMarkerCoord = e => {
     console.log(e);
+    console.log(this.props);
   };
 
   // Place marker with given parameter coordinates onto the Google Maps
@@ -75,10 +76,9 @@ export class App extends React.Component {
       clickEvent.latLng.lat(),
       clickEvent.latLng.lng()
     );
-
-    var coord = { lat: clickEvent.latLng.lat(), lng: clickEvent.latLng.lng() };
+    console.log("poly", this.state);
+    var coord = clickEvent.latLng;
     this.setState(prevState => ({
-      ...prevState,
       polyCoords: prevState.polyCoords.concat(coord)
     }));
   };
@@ -92,7 +92,9 @@ export class App extends React.Component {
 
   // Calculate the nominal power of the drawn polygon
   calcNominalPower = () => {
-    console.log(this.props.google.maps);
+    return this.props.google.maps.geometry.spherical
+      .computeArea(this.state.polyCoords)
+      .toFixed(2);
   };
 
   // Clear all polygon corner markers that have been placed on the map
@@ -130,9 +132,11 @@ export class App extends React.Component {
             />
           </Map>
           <div id="footer">
-            <p id={"areaNumber"}>Nominal Power: {this.calcNominalPower()}</p>
+            <p id={"areaNumber"}>
+              Nominal Power: {this.calcNominalPower()} m<sup>2</sup>
+            </p>
             <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
-              Clear Markers
+              Clear Map
             </button>
           </div>
         </div>
@@ -142,5 +146,6 @@ export class App extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: api_key
+  apiKey: api_key,
+  libraries: ["geometry", "places"]
 })(App);
