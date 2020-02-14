@@ -4,7 +4,7 @@ This project was created as part of the technical assignment for an interview pr
 
 -------------------
 
-## How to view the app:
+## How to view this app:
 
 ### Online:
 You can view the website via: https://seunghunoh57.github.io/google-maps-assignment/
@@ -18,4 +18,4 @@ Then, navigate to http://localhost:3000/ to view the application.
 
 --------------------
 
-This project was created by me, Seunghun Oh, with the help of create-react-app, google-maps-react, and Google Maps APIs. All uses or sampling of the project code must require my permission.
+This project was written by me, Seunghun Oh, in React with the help of google-maps-react, react-places-autocomplete, gh-pages, and Google Maps APIs. All uses or sampling of the project code must require my permission.
