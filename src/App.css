@@ -3,7 +3,7 @@
 }
 
 .App-body {
-  background-color: white;
+  background-color: #fbfbfa;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,14 @@
 
 #title {
   margin: 20px;
+  margin-top: 20px
+}
+
+#infoButton {
+  z-index: 2;
+  position: absolute;
+  right: 20px;
+  top: 20px
 }
 
 #searchDiv {
@@ -54,13 +62,15 @@
   z-index: 1;
 }
 
-#areaNumber {
-  width: 25vw;
+#powerNumber {
+  width: 30vw;
   float: left;
-  margin: 8px;
 }
 
 #clearMarkerButton {
   z-index: 2;
   font-size: large;
+  position: absolute;
+  left: 80vw;
+  top: 7.5vh;
 }

@@ -5,6 +5,7 @@
 import React from "react";
 import "./App.css";
 import dot from "./markerdot.png";
+import info from "./info.png";
 import { Map, Marker, Polygon, GoogleApiWrapper } from "google-maps-react";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 import { api_key } from "./config.js";
@@ -32,6 +33,10 @@ export class App extends React.Component {
       address: ""
     };
   }
+
+  handleHelpModal = () => {
+    console.log("nice");
+  };
 
   // Handle change in search bar by changing the appropriate state value
   handleChange = address => {
@@ -119,6 +124,13 @@ export class App extends React.Component {
       <div className="App">
         <div className="App-body">
           <h4 id="title">Solar Cell Installation Calculator</h4>
+          <img
+            id="infoButton"
+            width="25"
+            height="25"
+            src={info}
+            onClick={this.handleHelpModal}
+          />
           <div id="searchDiv">
             <AppAutocomplete
               address={this.state.address}
@@ -126,6 +138,9 @@ export class App extends React.Component {
               handleSelect={this.handleSelect}
             />
           </div>
+          <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
+            Clear Map Markers
+          </button>
           <Map
             className="map"
             centerAroundCurrentLocation
@@ -145,10 +160,9 @@ export class App extends React.Component {
             />
           </Map>
           <div id="footer">
-            <p id={"areaNumber"}>Nominal Power: {this.calcNominalPower()} MW</p>
-            <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
-              Clear Map
-            </button>
+            <p id={"powerNumber"}>
+              Nominal Power: {this.calcNominalPower()} Megawatts
+            </p>
           </div>
         </div>
       </div>
