@@ -40,7 +40,8 @@ export const AppInfoButton = props => {
           installation's area in meter squared multiplied by the light intensity
           at that area, measured in Watts per meter squared. For simplification
           purposes, this app will assume the light intensity is 1000 W/m
-          <sup>2</sup>.
+          <sup>2</sup> and that all of the area highlighted can be used for
+          solar installation.
         </p>
         <p>
           The assumptions this app follows are outlined by the Standard Testing
