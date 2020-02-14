@@ -92,9 +92,10 @@ export class App extends React.Component {
 
   // Calculate the nominal power of the drawn polygon
   calcNominalPower = () => {
-    return this.props.google.maps.geometry.spherical
-      .computeArea(this.state.polyCoords)
-      .toFixed(2);
+    var polyArea = this.props.google.maps.geometry.spherical.computeArea(
+      this.state.polyCoords
+    );
+    return (polyArea / 1000000).toFixed(polyArea === 0 ? 0 : 4);
   };
 
   // Clear all polygon corner markers that have been placed on the map
@@ -133,7 +134,7 @@ export class App extends React.Component {
           </Map>
           <div id="footer">
             <p id={"areaNumber"}>
-              Nominal Power: {this.calcNominalPower()} m<sup>2</sup>
+              Nominal Power: {this.calcNominalPower()} km<sup>2</sup>
             </p>
             <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
               Clear Map
