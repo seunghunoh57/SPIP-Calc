@@ -156,6 +156,21 @@ export class App extends React.Component {
               of the app.
             </p>
             <p>
+              The nominal power of a solar installation is calculated as the
+              installation's area in meter squared multiplied by the light
+              intensity at that area, measured in Watts per meter squared. For
+              simplification purposes, this app will assume the light intensity
+              is 1000 W/m<sup>2</sup>.
+            </p>
+            <p>
+              The assumptions this app follows are outlined by the Standard
+              Testing Conditions (STC). STC is outlined in IEC-61215, IEC-61646,
+              and UL-1703. STC also assumes the light is of the same spectrum as
+              of that hitting the earth's surface at latitude 35N, and solar
+              cell temperatures of 25 degrees Celcius. All these assumptions
+              lead to an approximate light intensity of 1000 W/m<sup>2</sup>
+            </p>
+            <p>
               If you wish to clear the map of polygon areas, press the Clear Map
               Markers located above the top right side of the embedded Google
               Maps.
