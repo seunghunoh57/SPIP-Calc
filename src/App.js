@@ -106,7 +106,7 @@ export class App extends React.Component {
     var polyArea = this.props.google.maps.geometry.spherical.computeArea(
       this.state.polyCoords
     );
-    return ((polyArea * 1000) / 1000).toFixed(polyArea === 0 ? 0 : 4);
+    return ((polyArea * 1000) / 1000000).toFixed(polyArea === 0 ? 0 : 4);
   };
 
   // Clear all polygon corner markers that have been placed on the map
@@ -144,9 +144,7 @@ export class App extends React.Component {
             />
           </Map>
           <div id="footer">
-            <p id={"areaNumber"}>
-              Nominal Power: {this.calcNominalPower()} kW<sup>2</sup>
-            </p>
+            <p id={"areaNumber"}>Nominal Power: {this.calcNominalPower()} MW</p>
             <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
               Clear Map
             </button>
