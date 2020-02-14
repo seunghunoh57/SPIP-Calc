@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-header {
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -20,4 +20,19 @@
   margin-right: auto;
   margin-bottom: 90vh;
   z-index: 1;
+}
+
+#footer {
+  z-index: 1;
+}
+
+#areaNumber {
+  width: 30vw;
+  float: left;
+  margin: 8px;
+}
+
+#clearMarkerButton {
+  z-index: 2;
+  font-size: large;
 }

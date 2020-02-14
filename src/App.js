@@ -1,3 +1,7 @@
+// Author: Seunghun Oh
+// This project displays a Google Maps from which you can draw polygons to calculate nominal power
+// of the said polygon. This project also allows for searching of Google Maps Places
+
 import React from "react";
 import "./App.css";
 import dot from "./markerdot.png";
@@ -16,6 +20,7 @@ const style = {
 };
 
 export class App extends React.Component {
+  // Constructor
   constructor(props) {
     super(props);
     this.state = {
@@ -28,10 +33,12 @@ export class App extends React.Component {
     };
   }
 
+  // Handle change in search bar by changing the appropriate state value
   handleChange = address => {
     this.setState({ address });
   };
 
+  // Handle selection of an address in the autocomplete
   handleSelect = address => {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
@@ -44,10 +51,24 @@ export class App extends React.Component {
       );
   };
 
-  placeMarker = coord => {
-    return <Marker draggable icon={dot} position={coord} />;
+  // handle the change in marker's coordinates after it is dragged
+  changeMarkerCoord = e => {
+    console.log(e);
   };
 
+  // Place marker with given parameter coordinates onto the Google Maps
+  placeMarker = coord => {
+    return (
+      <Marker
+        draggable
+        icon={dot}
+        position={coord}
+        onDragend={e => this.changeMarkerCoord(e)}
+      />
+    );
+  };
+
+  // Finds the coordinates of newly places marker and adds it to the Map
   placeNewMarker = (mapProps, map, clickEvent) => {
     console.log(
       "Clicked coordinate: ",
@@ -56,24 +77,33 @@ export class App extends React.Component {
     );
 
     var coord = { lat: clickEvent.latLng.lat(), lng: clickEvent.latLng.lng() };
-    console.log(typeof coord.lat);
     this.setState(prevState => ({
       ...prevState,
       polyCoords: prevState.polyCoords.concat(coord)
     }));
   };
 
+  // Places markers on the map to indicate draggable corners of nominal area polygon
   placePolyMarkers = () => {
-    console.log(this.state.polyCoords);
     return this.state.polyCoords.map(coord => {
       return this.placeMarker(coord);
     });
   };
 
+  // Calculate the nominal power of the drawn polygon
+  calcNominalPower = () => {
+    console.log(this.props.google.maps);
+  };
+
+  // Clear all polygon corner markers that have been placed on the map
+  clearPolyCoords = () => {
+    this.setState({ polyCoords: [] });
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-body">
           <div id="searchDiv">
             <AppAutocomplete
               address={this.state.address}
@@ -99,7 +129,13 @@ export class App extends React.Component {
               strokeWeight={2}
             />
           </Map>
-        </header>
+          <div id="footer">
+            <p id={"areaNumber"}>Nominal Power: {this.calcNominalPower()}</p>
+            <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
+              Clear Markers
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
