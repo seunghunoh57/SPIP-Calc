@@ -18,4 +18,4 @@ Then, navigate to http://localhost:3000/ to view the application.
 
 --------------------
 
-This project was created by me, Seunghun Oh, with the help of React, google-maps-react, react-places-autocomplete, gh-pages, and Google Maps APIs. All uses or sampling of the project code must require my permission.
+This project was written by me, Seunghun Oh, in React with the help of google-maps-react, react-places-autocomplete, gh-pages, and Google Maps APIs. All uses or sampling of the project code must require my permission.
