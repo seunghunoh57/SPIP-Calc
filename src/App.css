@@ -3,7 +3,7 @@
 }
 
 .App-body {
-  background-color: #fbfbfa;
+  background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -101,28 +101,29 @@
 
 #searchBar {
   width: 40vw;
-  fontSize: 22px;
+  font-size: 24px;
   height: 3vh;
-  padding-left: 5px
+  padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .searchResultsContainer {
   border-style: solid;
   border-width: 1px;
   position: absolute;
-  width: 40vw;
-  fontSize: 22px;
+  width: calc(40vw + 11px);
   text-align: justify
 }
 
 .searchResult {
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 
 #footer {
   position: absolute;
-  top: 90vh;
+  top: 89vh;
   z-index: 1;
 }
 
@@ -133,8 +134,8 @@
 
 #clearMarkerButton {
   z-index: 2;
-  font-size: large;
-  position: absolute;
-  left: 80vw;
-  top: 7.5vh;
+  font-size: 24px;
+  padding: 1px;
+  margin-top: 3px;
+  margin-left: 40px;
 }

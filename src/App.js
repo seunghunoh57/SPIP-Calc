@@ -126,7 +126,7 @@ export class App extends React.Component {
     return (
       <div className="App">
         <div className="App-body">
-          <h4 id="title">Solar Cell Installation Calculator</h4>
+          <h4 id="title">SOLAR CELL INSTALLATION CALCULATOR</h4>
           <AppInfoButton
             handleModalClose={this.handleModalClose}
             loadModal={this.state.loadModal}
@@ -137,10 +137,10 @@ export class App extends React.Component {
               handleChange={this.handleChange}
               handleSelect={this.handleSelect}
             />
+            <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
+              Clear Map Markers
+            </button>
           </div>
-          <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
-            Clear Map Markers
-          </button>
           <Map
             className="map"
             centerAroundCurrentLocation
@@ -160,9 +160,9 @@ export class App extends React.Component {
             />
           </Map>
           <div id="footer">
-            <p id={"powerNumber"}>
-              Nominal Power: {this.calcNominalPower()} Megawatts
-            </p>
+            <h5 id={"powerNumber"}>
+              NOMINAL POWER: {this.calcNominalPower()} MEGAWATTS
+            </h5>
           </div>
         </div>
       </div>
