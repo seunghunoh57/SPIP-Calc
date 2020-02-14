@@ -14,6 +14,7 @@ import { api_key } from "./config.js";
 import { AppAutocomplete } from "./AppAutocomplete";
 import { AppModal } from "./AppModal.js";
 
+// Styling for the Google Maps, done here to make sure it is embedded
 const style = {
   width: "75vw",
   height: "75vh",

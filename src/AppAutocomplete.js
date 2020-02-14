@@ -1,5 +1,7 @@
 // Author: Seunghun Oh
 // Returns a functional component that uses a Google Maps autocomplete feature
+// The Autocomplete gest inputs from the user, then usus Google Places API to genesate suggestions.
+// The suggestions are then used to generate suggestion items.
 
 import React from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
