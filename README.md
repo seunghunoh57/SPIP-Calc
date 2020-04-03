@@ -1,6 +1,6 @@
-## Google Maps Assignment
+## Solar Panel Installation Power Calculator
 
-This project was created as part of a technical aspect for an interview process. The project has a Google Map that can have an area highlighted as a polygon, from which a nominal power for solar installation is calculated.
+This project has a Google Map that can have an area highlighted as a polygon, from which a nominal power for solar installation is calculated.
 
 -------------------
 
