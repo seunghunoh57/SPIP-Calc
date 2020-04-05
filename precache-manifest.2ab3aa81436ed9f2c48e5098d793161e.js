@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "16099b03c70191b617bddc82039eaa37",
+    "revision": "def808ca90d085ba9bb0a787f08822da",
     "url": "/SPIP-calc/index.html"
   },
   {
