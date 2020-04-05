@@ -1,16 +1,16 @@
-## Google Maps Assignment
+## Solar Panel Installation Power Calculator
 
-This project was created as part of a technical aspect for an interview process. The project has a Google Map that can have an area highlighted as a polygon, from which a nominal power for solar installation is calculated.
+This project has a Google Map that can have an area highlighted as a polygon, from which a nominal power for solar installation is calculated.
 
 -------------------
 
 ## How to view this app:
 
 ### Online:
-You can view the website via: https://seunghunoh57.github.io/google-maps-assignment/
+You can view the website via: https://seunghunoh57.github.io/SPIC-calc
 
 ### Offline:
-Clone the repository and navigate to the local repository folder. In your terminal, type:
+Clone the repository to the desired folder using your terminal. Then, navigate to the local repository folder and type:
 
 ```npm start```
 
