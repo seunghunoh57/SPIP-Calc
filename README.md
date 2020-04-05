@@ -7,7 +7,7 @@ This project has a Google Map that can have an area highlighted as a polygon, fr
 ## How to view this app:
 
 ### Online:
-You can view the website via: https://seunghunoh57.github.io/google-maps-assignment/
+You can view the website via: https://seunghunoh57.github.io/SPIC-calc
 
 ### Offline:
 Clone the repository to the desired folder using your terminal. Then, navigate to the local repository folder and type:
