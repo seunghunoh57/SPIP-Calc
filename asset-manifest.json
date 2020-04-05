@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/google-maps-assignment/static/css/main.018372e1.chunk.css",
-    "main.js": "/google-maps-assignment/static/js/main.ab318045.chunk.js",
-    "main.js.map": "/google-maps-assignment/static/js/main.ab318045.chunk.js.map",
-    "runtime-main.js": "/google-maps-assignment/static/js/runtime-main.51cf90e8.js",
-    "runtime-main.js.map": "/google-maps-assignment/static/js/runtime-main.51cf90e8.js.map",
-    "static/js/2.9695544d.chunk.js": "/google-maps-assignment/static/js/2.9695544d.chunk.js",
-    "static/js/2.9695544d.chunk.js.map": "/google-maps-assignment/static/js/2.9695544d.chunk.js.map",
-    "index.html": "/google-maps-assignment/index.html",
-    "precache-manifest.4cb90a28211edbed7acc8c9e1f27a70f.js": "/google-maps-assignment/precache-manifest.4cb90a28211edbed7acc8c9e1f27a70f.js",
-    "service-worker.js": "/google-maps-assignment/service-worker.js",
-    "static/css/main.018372e1.chunk.css.map": "/google-maps-assignment/static/css/main.018372e1.chunk.css.map",
-    "static/js/2.9695544d.chunk.js.LICENSE.txt": "/google-maps-assignment/static/js/2.9695544d.chunk.js.LICENSE.txt",
-    "static/media/info.png": "/google-maps-assignment/static/media/info.ff63fec6.png"
+    "main.css": "/SPIP-calc/static/css/main.018372e1.chunk.css",
+    "main.js": "/SPIP-calc/static/js/main.643bfd7a.chunk.js",
+    "main.js.map": "/SPIP-calc/static/js/main.643bfd7a.chunk.js.map",
+    "runtime-main.js": "/SPIP-calc/static/js/runtime-main.2ae406b2.js",
+    "runtime-main.js.map": "/SPIP-calc/static/js/runtime-main.2ae406b2.js.map",
+    "static/js/2.9695544d.chunk.js": "/SPIP-calc/static/js/2.9695544d.chunk.js",
+    "static/js/2.9695544d.chunk.js.map": "/SPIP-calc/static/js/2.9695544d.chunk.js.map",
+    "index.html": "/SPIP-calc/index.html",
+    "precache-manifest.c3c093e7a0f48e2abd9df8d6bb31c2d8.js": "/SPIP-calc/precache-manifest.c3c093e7a0f48e2abd9df8d6bb31c2d8.js",
+    "service-worker.js": "/SPIP-calc/service-worker.js",
+    "static/css/main.018372e1.chunk.css.map": "/SPIP-calc/static/css/main.018372e1.chunk.css.map",
+    "static/js/2.9695544d.chunk.js.LICENSE.txt": "/SPIP-calc/static/js/2.9695544d.chunk.js.LICENSE.txt",
+    "static/media/info.png": "/SPIP-calc/static/media/info.ff63fec6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.51cf90e8.js",
+    "static/js/runtime-main.2ae406b2.js",
     "static/js/2.9695544d.chunk.js",
     "static/css/main.018372e1.chunk.css",
-    "static/js/main.ab318045.chunk.js"
+    "static/js/main.643bfd7a.chunk.js"
   ]
 }
