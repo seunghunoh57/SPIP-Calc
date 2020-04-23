@@ -10,7 +10,7 @@ This project has a Google Map that can have an area highlighted as a polygon, fr
 You can view the website via: https://seunghunoh57.github.io/SPIP-calc
 
 ### Offline:
-Clone the repository to the desired folder using your terminal. Then, navigate to the local repository folder and type:
+Clone or download the repository to your desired folder destination. Then, navigate to the cloned or downloaded repository via terminal and type:
 
 ```npm install```
 
