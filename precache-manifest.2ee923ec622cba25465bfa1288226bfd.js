@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "def808ca90d085ba9bb0a787f08822da",
+    "revision": "eb16807616c5598e94ed7611fbfa4bed",
     "url": "/SPIP-calc/index.html"
   },
   {
-    "revision": "21db68a9abd888d6122f",
-    "url": "/SPIP-calc/static/css/main.018372e1.chunk.css"
+    "revision": "671688564580f0ea3f10",
+    "url": "/SPIP-calc/static/css/main.c7726472.chunk.css"
   },
   {
-    "revision": "9ad1bb5bd71ce46d6291",
-    "url": "/SPIP-calc/static/js/2.25dc523a.chunk.js"
+    "revision": "fba51b72e093ae114a58",
+    "url": "/SPIP-calc/static/js/2.e4893ff0.chunk.js"
   },
   {
     "revision": "959150e688866e3de05cb62dc4dcd7db",
-    "url": "/SPIP-calc/static/js/2.25dc523a.chunk.js.LICENSE.txt"
+    "url": "/SPIP-calc/static/js/2.e4893ff0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "21db68a9abd888d6122f",
-    "url": "/SPIP-calc/static/js/main.aa620fb7.chunk.js"
+    "revision": "671688564580f0ea3f10",
+    "url": "/SPIP-calc/static/js/main.53650561.chunk.js"
   },
   {
     "revision": "9d37f7fc209863ad0cb2",

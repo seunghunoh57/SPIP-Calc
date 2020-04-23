@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SPIP-calc/precache-manifest.2ab3aa81436ed9f2c48e5098d793161e.js"
+  "/SPIP-calc/precache-manifest.2ee923ec622cba25465bfa1288226bfd.js"
 );
 
 self.addEventListener('message', (event) => {
