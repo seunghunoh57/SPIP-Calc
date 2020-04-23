@@ -3,9 +3,9 @@
 
 import React from "react";
 import "./App.css";
-import info from "./info.png";
-import linkedin from "./linkedinlogo.png";
-import github from "./githublogo.png";
+import info from "./resources/info.png";
+import linkedin from "./resources/linkedinlogo.png";
+import github from "./resources/githublogo.png";
 import { AppModal } from "./AppModal.js";
 import { ImageButton } from "./ImageButton";
 

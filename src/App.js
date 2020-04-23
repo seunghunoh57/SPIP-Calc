@@ -4,10 +4,10 @@
 
 import React from "react";
 import "./App.css";
-import dot from "./markerdot.png";
+import dot from "./resources/markerdot.png";
 import { Map, Marker, Polygon, GoogleApiWrapper } from "google-maps-react";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
-import { API_key } from "./config.js";
+import { API_key } from "./resources/config.js";
 import { AppAutocomplete } from "./AppAutocomplete.js";
 import { AppInfoButton } from "./AppInfoButton.js";
 import { AppButton } from "./AppButton";
