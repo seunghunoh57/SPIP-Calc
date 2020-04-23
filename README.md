@@ -16,7 +16,7 @@ Clone or download the repository to your desired folder destination. Then, navig
 
 ```npm start```
 
-Then, navigate to http://localhost:3000/ to view the application. Note that you must insert your your own Google API key in a file called `config.js` under `./src/`. The format of the `config.js` file is:
+Then, navigate to http://localhost:3000/ to view the application. Note that you must insert your your own Google API key in a file called `config.js` under `./src/resources/`. The format of the `config.js` file is:
 
 ```var API_Key="YOUR_KEY_HERE"```
 
