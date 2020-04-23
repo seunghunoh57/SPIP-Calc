@@ -12,6 +12,8 @@ You can view the website via: https://seunghunoh57.github.io/SPIP-calc
 ### Offline:
 Clone the repository to the desired folder using your terminal. Then, navigate to the local repository folder and type:
 
+```npm install```
+
 ```npm start```
 
 Then, navigate to http://localhost:3000/ to view the application. Note that you must insert your your own Google API key in a file called `config.js` under `./src/`.

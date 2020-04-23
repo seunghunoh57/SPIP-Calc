@@ -1,8 +1,8 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-body {
+.appBody {
   background-color: #fff;
   min-height: 100vh;
   display: flex;
@@ -17,6 +17,27 @@
 #title {
   margin: 20px;
   margin-top: 20px
+}
+
+#searchBar {
+  width: 40vw;
+  font-size: 24px;
+  height: 3vh;
+  padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.searchResultsContainer {
+  border-style: solid;
+  border-width: 1px;
+  position: absolute;
+  width: calc(40vw + 11px);
+  text-align: justify
+}
+
+.searchResult {
+  padding-left: 10px;
 }
 
 #infoButton {
@@ -83,11 +104,16 @@
   margin-right: auto;
 }
 
+#imageButtonBackground {
+  background-color: coral;
+}
+
 #closeModalButton {
   display: block;
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
+  font-size: 0.5em;
 }
 
 #searchDiv {
@@ -98,28 +124,6 @@
   margin-bottom: 90vh;
   z-index: 1;
 }
-
-#searchBar {
-  width: 40vw;
-  font-size: 24px;
-  height: 3vh;
-  padding-left: 10px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-}
-
-.searchResultsContainer {
-  border-style: solid;
-  border-width: 1px;
-  position: absolute;
-  width: calc(40vw + 11px);
-  text-align: justify
-}
-
-.searchResult {
-  padding-left: 10px;
-}
-
 
 #footer {
   position: absolute;

@@ -7,8 +7,9 @@ import info from "./info.png";
 import linkedin from "./linkedinlogo.png";
 import github from "./githublogo.png";
 import { AppModal } from "./AppModal.js";
+import { ImageButton } from "./ImageButton";
 
-export const AppInfoButton = props => {
+export const AppInfoButton = (props) => {
   return (
     <div>
       <img
@@ -23,7 +24,7 @@ export const AppInfoButton = props => {
         loadModal={props.loadModal}
         handleModalClose={props.handleModalClose}
       >
-        <h4>About the app</h4>
+        <h4>About this App</h4>
         <p>
           Hi everyone! My name is Seunghun Oh and this app is called Solar Cell
           Installation Calculator.
@@ -62,20 +63,14 @@ export const AppInfoButton = props => {
         </p>
         <p id="thankYou">Thank you!</p>
         <div id="thankYouMask" />
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://www.linkedin.com/in/seunghunoh/"
-        >
-          <img width="40" height="40" src={linkedin} alt="" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/seunghunoh57/"
-        >
-          <img width="40" height="40" src={github} alt="" />
-        </a>
+        <ImageButton
+          URL={"https://www.linkedin.com/in/seunghunoh/"}
+          imageSource={linkedin}
+        ></ImageButton>
+        <ImageButton
+          URL={"https://github.com/seunghunoh57/"}
+          imageSource={github}
+        ></ImageButton>
       </AppModal>
     </div>
   );

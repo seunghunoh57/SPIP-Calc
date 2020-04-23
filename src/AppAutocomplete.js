@@ -7,7 +7,7 @@ import React from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import "./App.css";
 
-export function AppAutocomplete(props) {
+export const AppAutocomplete = (props) => {
   return (
     <PlacesAutocomplete
       value={props.address}
@@ -25,10 +25,10 @@ export function AppAutocomplete(props) {
               <div className="searchResultsContainer">Loading...</div>
             ) : null}
             <div className="searchResultsContainer">
-              {suggestions.map(suggestion => {
+              {suggestions.map((suggestion) => {
                 const style = {
                   backgroundColor: suggestion.active ? "#fff5d0" : "#e9e9e4",
-                  "font-size": "18px"
+                  "font-size": "18px",
                 };
 
                 return (
@@ -46,4 +46,4 @@ export function AppAutocomplete(props) {
       )}
     </PlacesAutocomplete>
   );
-}
+};

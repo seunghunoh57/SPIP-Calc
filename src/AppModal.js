@@ -3,6 +3,7 @@
 
 import React from "react";
 import "./App.css";
+import { AppButton } from "./AppButton";
 
 export const AppModal = ({ loadModal, handleModalClose, children }) => {
   const showHideModal = loadModal ? "modal displayBlock" : "modal displayNone";
@@ -11,9 +12,9 @@ export const AppModal = ({ loadModal, handleModalClose, children }) => {
     <div className={showHideModal}>
       <section className="modalContent">
         {children}
-        <button id="closeModalButton" onClick={handleModalClose}>
+        <AppButton buttonID={"closeModalButton"} onClick={handleModalClose}>
           Close
-        </button>
+        </AppButton>
       </section>
     </div>
   );

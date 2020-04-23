@@ -7,54 +7,56 @@ import "./App.css";
 import dot from "./markerdot.png";
 import { Map, Marker, Polygon, GoogleApiWrapper } from "google-maps-react";
 import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
-import { api_key } from "./config.js";
+import { API_key } from "./config.js";
 import { AppAutocomplete } from "./AppAutocomplete.js";
 import { AppInfoButton } from "./AppInfoButton.js";
+import { AppButton } from "./AppButton";
 
 // Styling for the Google Maps, done here to make sure it is embedded
-const style = {
+const mapStyle = {
   width: "75vw",
   height: "75vh",
   position: "absolute",
   top: "50%",
   left: "50%",
-  transform: "translate(-50%, -50%)"
+  transform: "translate(-50%, -50%)",
 };
 
 export class App extends React.Component {
-  // Constructor
+  // Constructor containing the state
   constructor(props) {
     super(props);
     this.state = {
       currentCoord: {
         lat: null,
-        lng: null
+        lng: null,
       },
+
       polyCoords: [],
       address: "",
-      loadModal: false
+      loadModal: false,
     };
   }
 
   // On info button click, loads modal
-  handleModalClose = event => {
-    this.setState(prevState => ({ loadModal: !prevState.loadModal }));
+  handleModalClose = () => {
+    this.setState((prevState) => ({ loadModal: !prevState.loadModal }));
   };
 
   // Handle change in search bar by changing the appropriate state value
-  handleChange = address => {
+  handleChange = (address) => {
     this.setState({ address });
   };
 
   // Handle selection of an address in the autocomplete
-  handleSelect = address => {
+  handleSelect = (address) => {
     geocodeByAddress(address)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => {
+      .then((results) => getLatLng(results[0]))
+      .then((latLng) => {
         console.log("Success", latLng);
         this.setState({ currentCoord: latLng });
       })
-      .catch(error =>
+      .catch((error) =>
         console.error("Error while retrieving coordinates", error)
       );
   };
@@ -62,7 +64,6 @@ export class App extends React.Component {
   // handle the change in marker's coordinates after it is dragged
   changeMarkerCoord = (marker, newCoord) => {
     // replace marker.position from this.state.polyCoords with newCoord.latLng
-    // e is
 
     var tempPolyCoords = [...this.state.polyCoords];
     var idx = tempPolyCoords.indexOf(marker.position);
@@ -76,7 +77,7 @@ export class App extends React.Component {
   };
 
   // Place marker with given parameter coordinates onto the Google Maps
-  placeMarker = coord => {
+  placeMarker = (coord) => {
     return (
       <Marker
         draggable
@@ -96,14 +97,14 @@ export class App extends React.Component {
     );
 
     var coord = clickEvent.latLng;
-    this.setState(prevState => ({
-      polyCoords: prevState.polyCoords.concat(coord)
+    this.setState((prevState) => ({
+      polyCoords: prevState.polyCoords.concat(coord),
     }));
   };
 
   // Places markers on the map to indicate draggable corners of nominal area polygon
   placePolyMarkers = () => {
-    return this.state.polyCoords.map(coord => {
+    return this.state.polyCoords.map((coord) => {
       return this.placeMarker(coord);
     });
   };
@@ -124,8 +125,8 @@ export class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-body">
+      <div className="app">
+        <div className="appBody">
           <h4 id="title">SOLAR CELL INSTALLATION CALCULATOR</h4>
           <AppInfoButton
             handleModalClose={this.handleModalClose}
@@ -137,19 +138,22 @@ export class App extends React.Component {
               handleChange={this.handleChange}
               handleSelect={this.handleSelect}
             />
-            <button id={"clearMarkerButton"} onClick={this.clearPolyCoords}>
+            <AppButton
+              buttonID={"clearMarkerButton"}
+              onClick={this.clearPolyCoords}
+            >
               Clear Map Markers
-            </button>
+            </AppButton>
           </div>
           <Map
-            className="map"
+            className="googleMap"
             centerAroundCurrentLocation
             center={this.state.currentCoord}
             google={this.props.google}
             onReady={this.fetchPlaces}
             onClick={this.placeNewMarker}
             zoom={14}
-            style={style}
+            style={mapStyle}
           >
             {this.placePolyMarkers()}
             <Polygon
@@ -159,18 +163,19 @@ export class App extends React.Component {
               strokeWeight={2}
             />
           </Map>
-          <div id="footer">
+          <footer id="footer">
             <h5 id={"powerNumber"}>
               NOMINAL POWER: {this.calcNominalPower()} MEGAWATTS
             </h5>
-          </div>
+          </footer>
         </div>
       </div>
     );
   }
 }
 
+// Google API Wrapper to allow easy access to Google Cloud Platform access
 export default GoogleApiWrapper({
-  apiKey: api_key,
-  libraries: ["geometry", "places"]
+  apiKey: API_key,
+  libraries: ["geometry", "places"],
 })(App);
