@@ -10,13 +10,15 @@ This project has a Google Map that can have an area highlighted as a polygon, fr
 You can view the website via: https://seunghunoh57.github.io/SPIP-calc
 
 ### Offline:
-Clone the repository to the desired folder using your terminal. Then, navigate to the local repository folder and type:
+Clone or download the repository to your desired folder destination. Then, navigate to the cloned or downloaded repository via terminal and type:
 
 ```npm install```
 
 ```npm start```
 
-Then, navigate to http://localhost:3000/ to view the application. Note that you must insert your your own Google API key in a file called `config.js` under `./src/`.
+Then, navigate to http://localhost:3000/ to view the application. Note that you must insert your your own Google API key in a file called `config.js` under `./src/`. The format of the `config.js` file is:
+
+```var API_Key="YOUR_KEY_HERE"```
 
 --------------------
 
