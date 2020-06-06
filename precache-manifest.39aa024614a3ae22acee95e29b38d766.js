@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eb16807616c5598e94ed7611fbfa4bed",
+    "revision": "54669448f991ab87f21c6920f7ff9d05",
     "url": "/SPIP-calc/index.html"
   },
   {
-    "revision": "671688564580f0ea3f10",
-    "url": "/SPIP-calc/static/css/main.c7726472.chunk.css"
+    "revision": "dcad6a3ec294d4017beb",
+    "url": "/SPIP-calc/static/css/main.1976990e.chunk.css"
   },
   {
     "revision": "fba51b72e093ae114a58",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SPIP-calc/static/js/2.e4893ff0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "671688564580f0ea3f10",
-    "url": "/SPIP-calc/static/js/main.53650561.chunk.js"
+    "revision": "dcad6a3ec294d4017beb",
+    "url": "/SPIP-calc/static/js/main.c1ec038d.chunk.js"
   },
   {
     "revision": "9d37f7fc209863ad0cb2",
